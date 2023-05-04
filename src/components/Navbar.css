@@ -1,0 +1,114 @@
+.nav-menu {
+  background-color: var(--container-color);
+  position: fixed;
+  inset-block: 0;
+  left: -100%;
+  width: 100%;
+  padding: 60px 30px;
+  transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+.show-menu {
+  left: 0;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  column-gap: 24px;
+  border: 1px solid var(--border-color);
+  padding-block: 14px;
+}
+
+.nav-icon,
+.nav-name {
+  color: var(--title-color);
+  font-size: 24px;
+}
+
+.nav-name {
+  font-weight: var(--weight-500);
+}
+
+.active-nav .nav-icon,
+.active-nav .nav-name {
+  color: var(--first-color);
+}
+
+.menu {
+  position: fixed;
+  background-color: var(--container-color);
+  top: 30px;
+  right: 30px;
+  height: 40px;
+  width: 50px;
+}
+
+.menu span {
+  display: block;
+  width: 20px;
+  font-size: xx-large;
+  padding: 5px 8px;
+}
+
+@media screen and (min-width: 1024px) {
+  .nav-menu {
+    all: unset;
+  }
+  .menu {
+    display: none;
+  }
+  .nav {
+    position: fixed;
+    inset-block: 0;
+    right: 30px;
+    align-items: center;
+    display: flex;
+  }
+  .nav-item {
+    margin-block: 20px;
+  }
+  .nav-link {
+    border: none;
+    padding: 0;
+    border-radius: 50%;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: var(--container-color);
+  }
+  .nav-icon {
+    margin-inline: auto;
+    font-size: 20px;
+  }
+  .nav-name {
+    position: absolute;
+    top: 0;
+    right: 100%;
+    background-color: var(--first-color);
+    border-radius: 30px;
+    padding-inline: 30px 25px;
+    height: 100%;
+    line-height: 50px;
+    font-size: var(--small-font-size);
+    color: var(--text-white);
+    opacity: 0;
+    visibility: hidden;
+  }
+  .nav-link:hover .nav-name {
+    color: var(--text-white);
+    opacity: 1;
+    visibility: visible;
+    border-radius: 30px 0 0 30px;
+    right: 27px;
+    z-index: -1;
+  }
+  .nav-link:hover,
+  .active-nav {
+    background-color: var(--first-color);
+  }
+  .nav-link:hover .nav-icon,
+  .active-nav .nav-icon {
+    color: var(--text-white);
+  }
+}
