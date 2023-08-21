@@ -1,7 +1,12 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Themes from "./components/Themes";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Portfolio from "./pages/Portfolio/Portfolio";
@@ -13,7 +18,8 @@ function App() {
       <Navbar />
       <Themes />
       <Routes>
-        <Route path="/" index element={<Home />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Navigate replace to="/" />} />
         <Route path="/about" element={<About />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />
