@@ -18,8 +18,8 @@ function App() {
       <Navbar />
       <Themes />
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/home" element={<Navigate replace to="/" />} />
+        <Route exact path="/Portfolio" element={<Home />} />
+        <Route path="/home" element={<Navigate replace to="/Portfolio" />} />
         <Route path="/about" element={<About />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />
